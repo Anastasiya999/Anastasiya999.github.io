@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Projekt 2</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="helper.js"></script>
+<script type="text/javascript" src="students.js"></script>
+<script type="text/javascript" src="dynamic_select.js"></script>
+<script type="text/javascript" src="main.js"></script>
+<link href="main.css" rel="stylesheet">
+        
+<style>
+  
+</style>
+</head>
+
+<body>
+
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+          <a href="#add_student" onclick=closeNav()>Dodaj studenta</a>
+          <a href="#average"onclick=closeNav()>Wyswietl średnią</a>
+        </div>
+    </div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">&#8593;</button>
+
+
+
+    <!--navbar-->
+    <nav class="navbar" style="padding:10px;">
+        <div class = "container">
+            <div class = "navbar-header">
+              <span class="navbar-brand navbar-nav navbar-left logo">BAZA STUDENTÓW</span>
+            </div>
+            <div class="menu-btn">
+              <span class =" nav navbar-nav menu" style="cursor:pointer" onclick="openNav()">&#9776;</span>
+            </div>
+        </div>
+    </nav>
+    <section class = "container-fluid text-center landing" >
+        <a href="#show_students" class="main-header" style="color:#E4E47F;">Wyswietl studentów</a>
+    </section>
+
+    <section  id="show_students">
+        <div id="student_container" class="container-fluid" >
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="year">Rok</label>
+                    <select id="yearForCourse" class="custom-select" >
+                      <option>2020</option>
+                      <option>2021</option>
+                    </select>
+                </div>
+                <div class="col-sm-5">
+                    <label for="course_selection">Kursy</label>
+                    <select class="custom-select" id="course_selection">
+                        <option value="Logika">Logika</option>
+                        <option value="Język C">Język C</option>
+                        <option value="Algebra">Algebra</option>
+                        <option value="Systemy operacyjne">Systemy operacyjne</option>
+                     </select>
+                </div>
+		            <div class="col-sm-2" style="padding-top: 0.6em;">
+                    <label class="form-check-label" for="average">Średnia</label>
+                    <input type="checkbox" class="form-check-input" id="averageCheck">
+                </div>
+                <div class="col-sm-2">
+                  <button type="button" class="custom-btn" id="button_show" >Wyświetl</button>
+                </div>
+                <div class = "row" >
+                  <ol class = "list-group students"></ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class = "container-fluid" id="add_student">
+        <h2 class="text-center" style="padding-bottom: 3%;">Dodaj studenta</h2>
+        <div class = "row adding_form" >
+               <div class = "col-md-6" >
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="first_name" placeholder="First name" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="last_name" placeholder="Last name" required>
+                  </div>
+                  <div class="row form-row">
+                    <div class="form-group col-md-4">
+                      <label for="year">Rok</label>
+                      <select id="year" class="form-control custom-select" >
+                        <option>2020</option>
+                        <option>2021</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-5">
+                      <label for="courses">Kurs</label>
+                      <select id="courses" class="form-control custom-select">
+                        <option>Logika</option>
+                        <option>Język C</option>
+                        <option>Algebra</option>
+                        <option>Systemy operacyjne</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="grade">Ocena</label>
+                        <select id="grade" class="form-control custom-select">
+                          <option>5</option>
+                          <option>4.5</option>
+                          <option>4</option>
+                          <option>3.5</option>
+                          <option>3</option>
+                          <option>2</option>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <button type="button" class="custom-btn" id="btn-add">Dodaj</button>
+                    </div>
+                  </div>
+                </div>
+            <div class = "col-md-6">
+                <div class="form-group">
+                    <label for="listOfStudents">Ostatnio dodani</label>
+                    <textarea class="form-control" id="listOfStudents" style="overflow-y: scroll;resize: none;" rows="7" readonly></textarea>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid text-center" id="average" >
+        <h2  style="padding-bottom: 3%;">Wyświetl średnią</h2>
+        <div class ="row" id="show_average_student" style="margin-bottom:30px;margin-top: 30px;">
+            <div class="col-md-6" >
+                <div class="show_average_form">
+                  <span style="display:block; padding: 2%;">Dla studenta</span>
+                  <div class="form-group">
+                      <input type="text" class="form-control" id="first_name_average" style="max-width: 300px;"placeholder="First name">
+                  </div>
+                  <div class="form-group">
+                      <input type="text" class="form-control" id="last_name_average" style="max-width: 300px;"placeholder="Last name">
+                  </div>
+                  <div class="form-group">
+                      <div class="row">
+                      <div class="form-group col-md-5">
+                          <select id="years" class="form-control custom-select" style="max-width: 300px;">
+                            <option selected>Wszystkie lata</option>
+                            <option>2020</option>
+                            <option>2021</option>
+                          </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <div class="col-md-5">
+                        <button type="submit" class="btn btn-average custom-btn">Wyswietl</button>
+                      </div>
+                      <div class=" col-md-3">
+                          <input type="text" class="form-control" style="max-width: 300px;" id="average_value" readonly>
+                      </div>
+                  </div>
+                </div>
+           </div>
+        <div class="col-md-6">
+            <div class="show_average_form">
+                <span style="display:block; padding: 2%;">Dla kursu</span>
+                <div class="form-group">
+                    <div class="row">
+                    <div class="form-group col-md-5">
+                        <select id="years_average_course" class="form-control custom-select" style="max-width: 300px;">
+                          <option>2020</option>
+                          <option>2021</option>
+                        </select>
+                    </div>
+                   </div>
+                   <div class="row">
+                   <div class="form-group col-md-5">
+                    <select id="courses_average_course" class="form-control custom-select" style="max-width: 300px;">
+                      <option>Logika</option>
+                      <option>Język C</option>
+                      <option>Algebra</option>
+                      <option>Systemy operacyjne</option>
+                    </select>
+                  </div>
+                </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-5">
+                      <button type="submit" class="btn btn-average-course custom-btn">Wyswietl</button>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" style="max-width: 300px;" id="average_value_course" readonly>
+                    </div>
+                </div>
+              </div>
+            </div> 
+        </div>
+    </section>
+    
+    <footer>
+    </footer>
+
+    <script>
+        function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+  }
+  
+  function closeNav() {
+    document.getElementById("myNav").style.height = "0%";
+  }
+
+  var mybutton = document.getElementById("myBtn");
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+    </script>
+
+    </body>
+</html>

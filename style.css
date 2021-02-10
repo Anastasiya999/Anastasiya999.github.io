@@ -1,0 +1,339 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    
+    font: 400 15px/1.8 "Lato", sans-serif;
+       background-color: #0e1a25; 
+  }
+ 
+  /*-------ogólne ustawienia stylu dla menu-------------*/
+  .navbar {
+      position:fixed;
+      width: 100%;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      margin-bottom: 0;
+  
+      border: 0;
+      font-size: 14px;
+      letter-spacing: 5px;
+      
+      z-index:3;
+      
+      border-radius: 0px 0px 25px 25px;
+      box-shadow:  20px 20px 60px #0c161f, 
+               -20px -20px 60px #101e2b;
+      background: #0e1a25;
+  }
+  .navbar ul{
+      margin-left: 5%;
+      overflow: hidden;
+      list-style: none;
+  }
+  
+  /*------------ustawienia stylu dla zawartości menu-------------*/
+  .navbar ul a{
+      display: block;
+      padding: 4px;
+      text-decoration: none;
+  }
+  
+  .navbar ul li.dropdown {
+    display: block;
+  }
+  
+  .navbar ul li a:hover{
+    color: #b8e2e2 !important;
+  
+  }
+  
+  /*----ustawienia dla menu rozwijanego w przypadku małych urządzeń-------*/
+  .navbar .menu{
+    max-height: 0;
+    transition: .2s ease-out;
+  }
+  
+  .navbar .menu-icon{
+    padding: 28px 20px;
+    position: relative;
+    float:right;
+    cursor: pointer;
+  
+  }
+  
+  /*---------ustawienia ikonki menu która zmienia swój wygląd na "krzyżyk" po nacisnięciu---*/
+  .navbar .menu-icon .nav-icon{
+    display: block;
+    background: #b8e2e2;
+    height: 2px;
+    width:18px;
+    position: relative;
+    transition: .2s ease-out;
+  }
+  
+  .navbar .menu-icon .nav-icon:before{
+    background: #b8e2e2;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position:absolute;
+    top:5px;
+    transition: all .2s ease-out;
+  }
+  
+  .navbar .menu-icon .nav-icon:after{
+    background: #b8e2e2;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position:absolute;
+    top:-5px;
+    transition:all .2s ease-out;
+  }
+  
+  /*----usuwamy ikonkę "checkbox"----*/
+  .navbar .menu-btn{
+    display: none;
+  }
+  /*--------animacja ikonki menu------*/
+  .navbar .menu-btn:checked ~.menu{
+    max-height: 240px;
+  }
+  
+  .navbar .menu-btn:checked ~ .menu-icon .nav-icon{
+  
+    background: transparent;
+  }
+  
+  .navbar .menu-btn:checked ~ .menu-icon .nav-icon:before{
+    
+    transform:rotate(-45deg);
+    top:0;
+  }
+  
+  .navbar .menu-btn:checked ~ .menu-icon .nav-icon:after{
+    transform:rotate(+45deg);
+    top:0;
+  }
+  
+  /*----styl dla rozwijanego menu elementu "projekty"----*/
+  .navbar .dropdown-content {
+    display: none;     
+    position: relative;
+    background-color: #0e1a25;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    
+  }
+  
+  .navbar .dropdown-content a {
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .navbar .dropdown-content a:hover {background-color: #0d1721;}
+  
+  .navbar .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /*-----------blokowanie parallax efektu dla malych urzadzen--------*/
+  
+  .header, .wallpapers{
+    background-attachment: scroll;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  /*---------------styl dla sekcji z prywitaniem--*/
+  .header{
+    opacity: 0.9;
+    background-image: url("images/wallpaper.jpg");
+    min-height: 100%;
+    }
+  .header .container-fluid {
+   
+      padding-top: 90px;
+      padding-bottom: 70px;
+      position:relative;
+      top:80px;
+    
+    }
+  .header .row{
+    position:absolute;
+    left:3%;
+    top:90%;
+    
+  }
+  
+  .header .row .avatar{
+    width:55%;
+    height: 55%;
+    position: absolute;
+    left:40%;
+    top:-20%;
+  }
+  .header .text{
+    background-color: rgba(0, 0, 0, 0.575);
+    font-family: 'Crafty Girls';
+    letter-spacing: 1px;
+    margin:5%;
+    color: #b8e2e2;
+    border-radius: 25px 25px 25px 25px;
+    min-height: 250px;
+    min-width: 350px;
+    padding-top:7%;
+  }
+  
+  /*---------------styl dla sekcji "o mnie","zainteresowania"-----*/
+  
+  .about, .interests, .hobby{
+    line-height: 150%;
+    text-align:left;
+    text-align: justify;
+    padding:30px 30px;
+    font-size: 16px;
+  
+  }
+  .lang{
+    padding: 5px;
+    border-radius: 5px;
+    background: linear-gradient(145deg, #e58d03, #ffa803);
+    box-shadow:  20px 20px 60px #d88503, 
+             -20px -20px 60px #ffb503;
+  }
+  .about, .hobby{
+    color:#0e1a25;
+    background-color:#FE9D03;
+    
+  }
+  
+  .interests{
+    color:#FE9D03;
+    background-color:#0e1a25;  
+    
+  }
+  
+  .about h1,.interests h1,.hobby h1{
+    
+    font: medium "Lato", sans-serif;
+    font-family: 'Crafty Girls';
+    font-size: 20px;
+    text-align: center;
+    padding-bottom:5px;
+    border-bottom: 2px solid #FC6601;
+    
+     
+  }
+  .wallpapers{
+    background-image: url("images/wallpaper.jpg");
+    min-height: 50%;
+  }
+  .interests .row .kosmos, .sport{
+    padding: 50px;
+    border-radius: 30px;
+    background: linear-gradient(145deg, #0d1721, #0f1c28);
+    box-shadow:  20px 20px 60px #0c161f, 
+             -20px -20px 60px #101e2b;
+   
+  }
+  /*---------------styl dla sekcji "linki kontaktowe"-----*/
+  .interests p{
+text-align:left;
+}
+  .contact{
+    background-color:#0e1a25;
+    padding: 10px 110px 10px 80px;
+    
+    }
+  .contact .contact_icons li {
+    display: inline;
+    padding: 5%;
+  }
+@media only screen and (orientation: landscape) {
+.header .container-fluid{
+padding:0;
+margin:0;
+}
+
+  /*--------------dla wielkich ekranow----------*/
+  @media only screen and (min-width: 768px){
+    .navbar{
+      font-size: 16px;
+    }
+    .navbar li{
+      float:left;
+    }
+    .navbar li a{
+      padding: 14px 30px;
+    }
+    .navbar .menu{
+      clear:none;
+      float:right;
+      max-height: none;
+    }
+    .navbar .menu-icon{
+      display:none;
+    }
+    .header .container-fluid {
+      padding-top: 200px;
+    
+    }
+  
+    .header .row{
+    left:30%;
+    min-height: 350px;
+    min-width: 400px;
+    }
+  
+    .row .avatar{
+    width:100%;
+    height: 100%;
+    left:50%;
+    top:-15%;
+  }
+  .header .text{
+    min-height: 300px;
+    min-width: 550px;
+    padding-top:10%;
+    font-size:22px;
+    text-indent:5%;
+    padding:1.8em 1em;
+  }
+  .about, .hobby{
+    padding:150px 280px;
+    height: 650px;
+    font-size: 20px;
+  }
+  .interests{
+    padding:50px 210px;
+    padding-top: 60px;
+    font-size: 20px;
+  }
+  .about h1,.interests h1,.hobby h1{
+    font-size: 24px;
+  }
+  .contact{
+    padding-top:4%;
+    padding-bottom: 4%;
+    padding-left:40%;
+    padding-right: 40%;
+  }
+  
+  .hobby{
+    padding-top: 5%;
+    padding-bottom: 7%;
+
+    min-height:800px;
+  }
+
+  .header, .wallpapers{
+    background-attachment: fixed;
+  }
+  }
+  }

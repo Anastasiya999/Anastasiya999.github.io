@@ -1,0 +1,304 @@
+html {
+    scroll-behavior: smooth;
+    margin: 0; 
+  }
+
+body{
+    font: 20px Montserrat, sans-serif;
+    background-color: #081B29;
+    height:100%;
+    }
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #830261;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+    }
+  #myBtn:hover {
+    background-color: #3a032b;
+  }
+a, h2{
+    letter-spacing: 5px;
+    font-size:24px;
+}
+
+.landing a:hover{
+    text-decoration: none;
+    color: rgb(221, 156, 57)!important;
+}
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    }
+    
+.overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0, 0.9);
+    overflow-y: hidden;
+    transition: 0.5s;
+  }
+  
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 30px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .overlay a:hover, .overlay a:focus {
+    color: #E4E47F;
+  }
+  
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 40px;
+  }
+  .navbar{
+      color:#f0b85e;
+  }
+  .navbar .container{
+      padding-bottom: 0%;
+      padding-left:20px;
+     /* display:inline-block;*/
+
+
+  }
+  .navbar-header{
+      float:left;
+      padding:10px;
+      letter-spacing:2px;
+     /* margin-left:10px;*/
+}
+  .navbar-header .logo{
+      font-size:12px;
+}
+  .menu-btn{
+      float:right;
+      /*margin-left:8.5em;*/
+     
+}
+  
+  .landing{
+    background-image: url('school.jpg');
+    height: 100%; 
+    width:100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    letter-spacing:2px;
+    color:white;
+    font-size:36px;
+    padding-top: 150px;
+    padding-bottom: 200px;
+
+        
+  }
+  #add_student{
+    background-color: #e7cc6a;
+    background-color:#F5A92F;
+    min-height: 700px;
+  }
+  #student_container, .show_average_form{
+    color: rgb(221, 156, 57);
+    padding: 50px;
+    border-radius: 30px;
+    background: #081B29;
+    -webkit-box-shadow: inset 6px 6px 12px #071723, 
+              inset -6px -6px 12px #091f2f;
+    box-shadow: inset 6px 6px 12px #071723, 
+              inset -6px -6px 12px #091f2f;
+  }
+ 
+  #student_container .custom-select{
+    border: none;
+    margin-bottom:20px;
+    color:white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    background: #081B29;
+    box-shadow:  6px 6px 12px #071723, 
+               -6px -6px 12px #091f2f;
+  }
+#student_container .students li{
+padding-bottom:25px;
+padding-right:0px;
+
+
+}
+
+ 
+ #average .custom-select{
+    color:white;
+    border: none;
+    font-size: 16;
+    text-decoration: none;
+    cursor: pointer;
+    background: #081B29;
+    box-shadow:  6px 6px 12px #071723, 
+               -6px -6px 12px #091f2f;
+    
+ }
+ 
+  #student_container .students{
+      padding:12%;
+      padding-left:1%;
+      padding-right:1%;
+      color:white;
+  }
+
+   
+  #show_students, #add_student, #average{
+    padding:20px;
+    min-height: 500px;
+    font-size:18px;
+   
+  }
+  
+  #add_student{
+      padding: 7% 14% ;    
+  }
+  #average{
+    padding:30px 30px;
+    color: rgb(221, 156, 57);
+    
+  }
+  .adding_form{
+      
+    color:#081B29;
+    padding-top:7%;
+    padding-bottom: 7%;
+    border-radius: 18px;
+    border-radius: 18px;
+    background: #F5A92F;
+    box-shadow: inset 6px 6px 12px #d09028, 
+                inset -6px -6px 12px #ffc236;  
+  }
+ 
+  
+  .adding_form .custom-select{
+    color:white;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;   
+    background: #F5A92F;
+    box-shadow:  6px 6px 12px #d09028, 
+                -6px -6px 12px #ffc236; 
+  }
+  
+  .adding_form .form-control{
+      
+      border:none;    
+  }
+   
+   .custom-btn{
+    border-radius:4px;
+    color:white;
+    background-color: #830261;
+    border: none;
+    padding: 15px 20px; 
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom:20px;  
+  }
+ @media only screen and (min-width: 768px){
+ 
+  .landing{
+    padding-top: 200px;
+    font-size:32px;
+    min-height:700px;
+
+}
+.navbar .container{
+    padding-top: 0.3em;
+    padding-bottom: 0%;
+  }
+  .navbar-header{
+      
+    padding:10px;
+    letter-spacing:2px;
+ }
+  .navbar-header .logo{
+    font-size:12px;
+  }
+  .menu-btn{
+      
+    padding-top:15px;
+      
+  }
+
+
+  #show_students, #add_student, #average{
+    padding:80px 100px;
+    
+  }
+#student_container .students{
+  padding-top:15%;
+  padding-left:5%;
+  padding-right:5%;
+    
+}
+  .main-header{
+  font-size:36px;
+  }
+
+}
+  
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+    }
+   
+  }
+@media only screen and (max-width: 568px){
+#student_container .students li{
+
+
+
+}
+#student_container .students li span{
+font-size:11px;
+
+
+}
+
+
+}
+ 
+  
